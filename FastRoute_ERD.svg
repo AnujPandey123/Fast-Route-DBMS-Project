@@ -1,0 +1,305 @@
+<svg viewBox="0 0 1100 680" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1100" height="680" fill="#F0F4FA" rx="12"/>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="1100" height="52" fill="#1F3864" rx="12"/>
+  <rect x="0" y="40" width="1100" height="12" fill="#1F3864"/>
+  <text x="550" y="33" text-anchor="middle" fill="white" font-size="20" font-weight="bold">FastRoute Logistics — Entity Relationship Diagram (ERD)</text>
+
+  <!-- Legend -->
+  <rect x="20" y="620" width="14" height="14" fill="#1F3864" rx="2"/>
+  <text x="40" y="632" fill="#333" font-size="12">Primary Key (PK)</text>
+  <rect x="160" y="620" width="14" height="14" fill="#7B4F9E" rx="2"/>
+  <text x="180" y="632" fill="#333" font-size="12">Foreign Key (FK)</text>
+  <rect x="300" y="620" width="14" height="14" fill="#C25B00" rx="2"/>
+  <text x="320" y="632" fill="#333" font-size="12">NoSQL (MongoDB)</text>
+  <text x="600" y="632" fill="#555" font-size="11" font-style="italic">Notation: ‖—‖ = One-to-Many  |  ○—‖ = Zero-or-One-to-Many</text>
+
+  <!-- ═══════════════ ENTITY: ROUTE (top-left) ═══════════════ -->
+  <g id="route">
+    <rect x="30" y="80" width="175" height="175" fill="white" rx="6" stroke="#2E7D32" stroke-width="2.5" filter="url(#shadow)"/>
+    <rect x="30" y="80" width="175" height="34" fill="#2E7D32" rx="6"/>
+    <rect x="30" y="101" width="175" height="13" fill="#2E7D32"/>
+    <text x="118" y="102" text-anchor="middle" fill="white" font-size="14" font-weight="bold">ROUTE</text>
+    <!-- Rows -->
+    <rect x="30" y="114" width="175" height="24" fill="#E8F5E9"/>
+    <rect x="30" y="114" width="8" height="24" fill="#1F3864"/>
+    <text x="44" y="131" fill="#1F3864" font-size="12" font-weight="bold">🔑</text>
+    <text x="62" y="131" fill="#1F3864" font-size="12" font-weight="bold">RouteID</text>
+    <text x="165" y="131" fill="#555" font-size="11" text-anchor="end">PK · int</text>
+
+    <rect x="30" y="138" width="175" height="24" fill="white"/>
+    <text x="44" y="155" fill="#7B4F9E" font-size="12">ShipmentID</text>
+    <text x="165" y="155" fill="#555" font-size="11" text-anchor="end">FK · int</text>
+
+    <rect x="30" y="162" width="175" height="24" fill="#E8F5E9"/>
+    <text x="44" y="179" fill="#333" font-size="12">Origin</text>
+    <text x="165" y="179" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="30" y="186" width="175" height="24" fill="white"/>
+    <text x="44" y="203" fill="#333" font-size="12">Destination</text>
+    <text x="165" y="203" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="30" y="210" width="175" height="24" fill="#E8F5E9" rx="0"/>
+    <rect x="30" y="222" width="175" height="12" fill="#E8F5E9" rx="6"/>
+    <text x="44" y="227" fill="#333" font-size="12">Distance</text>
+    <text x="165" y="227" fill="#555" font-size="11" text-anchor="end">float</text>
+    <rect x="30" y="243" width="175" height="12" fill="white" rx="6"/>
+    <rect x="30" y="246" width="175" height="9" fill="white"/>
+  </g>
+
+  <!-- ═══════════════ ENTITY: SHIPMENT (center) ═══════════════ -->
+  <g id="shipment">
+    <rect x="300" y="80" width="185" height="200" fill="white" rx="6" stroke="#1565C0" stroke-width="2.5"/>
+    <rect x="300" y="80" width="185" height="34" fill="#1565C0" rx="6"/>
+    <rect x="300" y="101" width="185" height="13" fill="#1565C0"/>
+    <text x="393" y="102" text-anchor="middle" fill="white" font-size="14" font-weight="bold">SHIPMENT</text>
+    
+    <rect x="300" y="114" width="185" height="24" fill="#E3F2FD"/>
+    <rect x="300" y="114" width="8" height="24" fill="#1F3864"/>
+    <text x="316" y="131" fill="#1F3864" font-size="12" font-weight="bold">🔑</text>
+    <text x="334" y="131" fill="#1F3864" font-size="12" font-weight="bold">ShipmentID</text>
+    <text x="477" y="131" fill="#555" font-size="11" text-anchor="end">PK · int</text>
+
+    <rect x="300" y="138" width="185" height="24" fill="white"/>
+    <text x="316" y="155" fill="#7B4F9E" font-size="12">ClientID</text>
+    <text x="477" y="155" fill="#555" font-size="11" text-anchor="end">FK · int</text>
+
+    <rect x="300" y="162" width="185" height="24" fill="#E3F2FD"/>
+    <text x="316" y="179" fill="#7B4F9E" font-size="12">VehicleID</text>
+    <text x="477" y="179" fill="#555" font-size="11" text-anchor="end">FK · int</text>
+
+    <rect x="300" y="186" width="185" height="24" fill="white"/>
+    <text x="316" y="203" fill="#333" font-size="12">Status</text>
+    <text x="477" y="203" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="300" y="210" width="185" height="24" fill="#E3F2FD"/>
+    <text x="316" y="227" fill="#333" font-size="12">Created_At</text>
+    <text x="477" y="227" fill="#555" font-size="11" text-anchor="end">datetime</text>
+
+    <rect x="300" y="234" width="185" height="24" fill="white"/>
+    <text x="316" y="251" fill="#333" font-size="12">SLA_Deadline</text>
+    <text x="477" y="251" fill="#555" font-size="11" text-anchor="end">datetime</text>
+
+    <rect x="300" y="258" width="185" height="22" fill="#E3F2FD" rx="0"/>
+    <rect x="300" y="268" width="185" height="12" fill="#E3F2FD" rx="6"/>
+    <rect x="300" y="270" width="185" height="10" fill="white" rx="6"/>
+  </g>
+
+  <!-- ═══════════════ ENTITY: CLIENT (right) ═══════════════ -->
+  <g id="client">
+    <rect x="580" y="80" width="180" height="175" fill="white" rx="6" stroke="#AD1457" stroke-width="2.5"/>
+    <rect x="580" y="80" width="180" height="34" fill="#AD1457" rx="6"/>
+    <rect x="580" y="101" width="180" height="13" fill="#AD1457"/>
+    <text x="670" y="102" text-anchor="middle" fill="white" font-size="14" font-weight="bold">CLIENT</text>
+    
+    <rect x="580" y="114" width="180" height="24" fill="#FCE4EC"/>
+    <rect x="580" y="114" width="8" height="24" fill="#1F3864"/>
+    <text x="596" y="131" fill="#1F3864" font-size="12" font-weight="bold">🔑</text>
+    <text x="614" y="131" fill="#1F3864" font-size="12" font-weight="bold">ClientID</text>
+    <text x="752" y="131" fill="#555" font-size="11" text-anchor="end">PK · int</text>
+
+    <rect x="580" y="138" width="180" height="24" fill="white"/>
+    <text x="596" y="155" fill="#333" font-size="12">Name</text>
+    <text x="752" y="155" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="162" width="180" height="24" fill="#FCE4EC"/>
+    <text x="596" y="179" fill="#333" font-size="12">Contact</text>
+    <text x="752" y="179" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="186" width="180" height="24" fill="white"/>
+    <text x="596" y="203" fill="#333" font-size="12">SLA_Type</text>
+    <text x="752" y="203" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="210" width="180" height="24" fill="#FCE4EC" rx="0"/>
+    <rect x="580" y="222" width="180" height="12" fill="#FCE4EC" rx="6"/>
+    <text x="596" y="227" fill="#333" font-size="12">State</text>
+    <text x="752" y="227" fill="#555" font-size="11" text-anchor="end">string</text>
+    <rect x="580" y="244" width="180" height="11" fill="white" rx="6"/>
+    <rect x="580" y="244" width="180" height="6" fill="white"/>
+  </g>
+
+  <!-- ═══════════════ ENTITY: VEHICLE (bottom-center) ═══════════════ -->
+  <g id="vehicle">
+    <rect x="300" y="400" width="185" height="175" fill="white" rx="6" stroke="#E65100" stroke-width="2.5"/>
+    <rect x="300" y="400" width="185" height="34" fill="#E65100" rx="6"/>
+    <rect x="300" y="421" width="185" height="13" fill="#E65100"/>
+    <text x="393" y="422" text-anchor="middle" fill="white" font-size="14" font-weight="bold">VEHICLE</text>
+    
+    <rect x="300" y="434" width="185" height="24" fill="#FBE9E7"/>
+    <rect x="300" y="434" width="8" height="24" fill="#1F3864"/>
+    <text x="316" y="451" fill="#1F3864" font-size="12" font-weight="bold">🔑</text>
+    <text x="334" y="451" fill="#1F3864" font-size="12" font-weight="bold">VehicleID</text>
+    <text x="477" y="451" fill="#555" font-size="11" text-anchor="end">PK · int</text>
+
+    <rect x="300" y="458" width="185" height="24" fill="white"/>
+    <text x="316" y="475" fill="#7B4F9E" font-size="12">DriverID</text>
+    <text x="477" y="475" fill="#555" font-size="11" text-anchor="end">FK · int</text>
+
+    <rect x="300" y="482" width="185" height="24" fill="#FBE9E7"/>
+    <text x="316" y="499" fill="#333" font-size="12">PlateNo</text>
+    <text x="477" y="499" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="300" y="506" width="185" height="24" fill="white"/>
+    <text x="316" y="523" fill="#333" font-size="12">Capacity</text>
+    <text x="477" y="523" fill="#555" font-size="11" text-anchor="end">int</text>
+
+    <rect x="300" y="530" width="185" height="24" fill="#FBE9E7" rx="0"/>
+    <rect x="300" y="542" width="185" height="12" fill="#FBE9E7" rx="6"/>
+    <text x="316" y="547" fill="#333" font-size="12">Type</text>
+    <text x="477" y="547" fill="#555" font-size="11" text-anchor="end">string</text>
+    <rect x="300" y="562" width="185" height="13" fill="white" rx="6"/>
+    <rect x="300" y="562" width="185" height="8" fill="white"/>
+  </g>
+
+  <!-- ═══════════════ ENTITY: DRIVER (bottom-right) ═══════════════ -->
+  <g id="driver">
+    <rect x="580" y="400" width="180" height="175" fill="white" rx="6" stroke="#5E35B1" stroke-width="2.5"/>
+    <rect x="580" y="400" width="180" height="34" fill="#5E35B1" rx="6"/>
+    <rect x="580" y="421" width="180" height="13" fill="#5E35B1"/>
+    <text x="670" y="422" text-anchor="middle" fill="white" font-size="14" font-weight="bold">DRIVER</text>
+    
+    <rect x="580" y="434" width="180" height="24" fill="#EDE7F6"/>
+    <rect x="580" y="434" width="8" height="24" fill="#1F3864"/>
+    <text x="596" y="451" fill="#1F3864" font-size="12" font-weight="bold">🔑</text>
+    <text x="614" y="451" fill="#1F3864" font-size="12" font-weight="bold">DriverID</text>
+    <text x="752" y="451" fill="#555" font-size="11" text-anchor="end">PK · int</text>
+
+    <rect x="580" y="458" width="180" height="24" fill="white"/>
+    <text x="596" y="475" fill="#333" font-size="12">Name</text>
+    <text x="752" y="475" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="482" width="180" height="24" fill="#EDE7F6"/>
+    <text x="596" y="499" fill="#333" font-size="12">LicenseNo</text>
+    <text x="752" y="499" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="506" width="180" height="24" fill="white"/>
+    <text x="596" y="523" fill="#333" font-size="12">Zone</text>
+    <text x="752" y="523" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="580" y="530" width="180" height="24" fill="#EDE7F6" rx="0"/>
+    <rect x="580" y="542" width="180" height="12" fill="#EDE7F6" rx="6"/>
+    <text x="596" y="547" fill="#333" font-size="12">PhoneNo</text>
+    <text x="752" y="547" fill="#555" font-size="11" text-anchor="end">string</text>
+    <rect x="580" y="562" width="180" height="13" fill="white" rx="6"/>
+    <rect x="580" y="562" width="180" height="8" fill="white"/>
+  </g>
+
+  <!-- ═══════════════ ENTITY: GPS_EVENT (MongoDB, far right) ═══════════════ -->
+  <g id="gps">
+    <rect x="850" y="80" width="215" height="310" fill="white" rx="6" stroke="#C25B00" stroke-width="2.5" stroke-dasharray="8,4"/>
+    <rect x="850" y="80" width="215" height="34" fill="#C25B00" rx="6"/>
+    <rect x="850" y="101" width="215" height="13" fill="#C25B00"/>
+    <text x="958" y="99" text-anchor="middle" fill="white" font-size="13" font-weight="bold">GPS_EVENT</text>
+    <text x="958" y="110" text-anchor="middle" fill="#FFE082" font-size="10">(MongoDB Collection)</text>
+    
+    <rect x="850" y="114" width="215" height="24" fill="#FFF3E0"/>
+    <rect x="850" y="114" width="8" height="24" fill="#C25B00"/>
+    <text x="866" y="131" fill="#C25B00" font-size="12" font-weight="bold">_id</text>
+    <text x="1057" y="131" fill="#555" font-size="11" text-anchor="end">ObjectID</text>
+
+    <rect x="850" y="138" width="215" height="24" fill="white"/>
+    <text x="866" y="155" fill="#7B4F9E" font-size="12">VehicleID</text>
+    <text x="1057" y="155" fill="#555" font-size="11" text-anchor="end">ref · int</text>
+
+    <rect x="850" y="162" width="215" height="24" fill="#FFF3E0"/>
+    <text x="866" y="179" fill="#333" font-size="12">Timestamp</text>
+    <text x="1057" y="179" fill="#555" font-size="11" text-anchor="end">datetime</text>
+
+    <rect x="850" y="186" width="215" height="24" fill="white"/>
+    <text x="866" y="203" fill="#333" font-size="12">Latitude</text>
+    <text x="1057" y="203" fill="#555" font-size="11" text-anchor="end">float</text>
+
+    <rect x="850" y="210" width="215" height="24" fill="#FFF3E0"/>
+    <text x="866" y="227" fill="#333" font-size="12">Longitude</text>
+    <text x="1057" y="227" fill="#555" font-size="11" text-anchor="end">float</text>
+
+    <rect x="850" y="234" width="215" height="24" fill="white"/>
+    <text x="866" y="251" fill="#333" font-size="12">Speed_kmph</text>
+    <text x="1057" y="251" fill="#555" font-size="11" text-anchor="end">float</text>
+
+    <rect x="850" y="258" width="215" height="24" fill="#FFF3E0"/>
+    <text x="866" y="275" fill="#333" font-size="12">Fuel_Level_%</text>
+    <text x="1057" y="275" fill="#555" font-size="11" text-anchor="end">float</text>
+
+    <rect x="850" y="282" width="215" height="24" fill="white"/>
+    <text x="866" y="299" fill="#333" font-size="12">Alert_Type</text>
+    <text x="1057" y="299" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="850" y="306" width="215" height="24" fill="#FFF3E0"/>
+    <text x="866" y="323" fill="#333" font-size="12">Engine_Status</text>
+    <text x="1057" y="323" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="850" y="330" width="215" height="24" fill="white"/>
+    <text x="866" y="347" fill="#333" font-size="12">Zone_ID</text>
+    <text x="1057" y="347" fill="#555" font-size="11" text-anchor="end">string</text>
+
+    <rect x="850" y="354" width="215" height="36" fill="#FFF3E0" rx="0"/>
+    <rect x="850" y="370" width="215" height="20" fill="#FFF3E0" rx="6"/>
+    <rect x="850" y="376" width="215" height="14" fill="white" rx="6"/>
+  </g>
+
+  <!-- ═══ RELATIONSHIP LINES ═══ -->
+
+  <!-- ROUTE → SHIPMENT (1:M: "has route") -->
+  <!-- Route right edge → Shipment left edge -->
+  <line x1="205" y1="170" x2="300" y2="170" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Crow's foot at ROUTE side (one) -->
+  <line x1="205" y1="162" x2="205" y2="178" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="210" y1="162" x2="210" y2="178" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Crow's foot at SHIPMENT side (many) -->
+  <line x1="300" y1="162" x2="290" y2="170" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="300" y1="178" x2="290" y2="170" stroke="#2E7D32" stroke-width="2"/>
+  <line x1="295" y1="162" x2="295" y2="178" stroke="#2E7D32" stroke-width="2"/>
+  <text x="242" y="162" text-anchor="middle" fill="#2E7D32" font-size="11" font-style="italic">1:1</text>
+
+  <!-- SHIPMENT → CLIENT (M:1: "places") -->
+  <!-- Shipment right → Client left -->
+  <line x1="485" y1="155" x2="580" y2="155" stroke="#1565C0" stroke-width="2"/>
+  <!-- Many at shipment -->
+  <line x1="485" y1="147" x2="495" y2="155" stroke="#1565C0" stroke-width="2"/>
+  <line x1="485" y1="163" x2="495" y2="155" stroke="#1565C0" stroke-width="2"/>
+  <line x1="490" y1="147" x2="490" y2="163" stroke="#1565C0" stroke-width="2"/>
+  <!-- One at CLIENT -->
+  <line x1="580" y1="147" x2="580" y2="163" stroke="#1565C0" stroke-width="2"/>
+  <line x1="575" y1="147" x2="575" y2="163" stroke="#1565C0" stroke-width="2"/>
+  <text x="533" y="147" text-anchor="middle" fill="#1565C0" font-size="11" font-style="italic">M:1</text>
+
+  <!-- SHIPMENT → VEHICLE (1:M: "assigned to") -->
+  <!-- Shipment bottom → Vehicle top -->
+  <line x1="393" y1="280" x2="393" y2="400" stroke="#1565C0" stroke-width="2"/>
+  <!-- One at shipment -->
+  <line x1="385" y1="280" x2="401" y2="280" stroke="#1565C0" stroke-width="2"/>
+  <line x1="385" y1="285" x2="401" y2="285" stroke="#1565C0" stroke-width="2"/>
+  <!-- Many at VEHICLE -->
+  <line x1="385" y1="400" x2="393" y2="390" stroke="#1565C0" stroke-width="2"/>
+  <line x1="401" y1="400" x2="393" y2="390" stroke="#1565C0" stroke-width="2"/>
+  <line x1="385" y1="395" x2="401" y2="395" stroke="#1565C0" stroke-width="2"/>
+  <text x="413" y="342" fill="#1565C0" font-size="11" font-style="italic">1:M</text>
+
+  <!-- VEHICLE → DRIVER (M:1: "operated by") -->
+  <!-- Vehicle right → Driver left -->
+  <line x1="485" y1="490" x2="580" y2="490" stroke="#E65100" stroke-width="2"/>
+  <!-- Many at vehicle -->
+  <line x1="485" y1="482" x2="495" y2="490" stroke="#E65100" stroke-width="2"/>
+  <line x1="485" y1="498" x2="495" y2="490" stroke="#E65100" stroke-width="2"/>
+  <line x1="490" y1="482" x2="490" y2="498" stroke="#E65100" stroke-width="2"/>
+  <!-- One at driver -->
+  <line x1="580" y1="482" x2="580" y2="498" stroke="#E65100" stroke-width="2"/>
+  <line x1="575" y1="482" x2="575" y2="498" stroke="#E65100" stroke-width="2"/>
+  <text x="533" y="482" text-anchor="middle" fill="#E65100" font-size="11" font-style="italic">M:1</text>
+
+  <!-- VEHICLE → GPS_EVENT (reference, dashed) -->
+  <line x1="760" y1="490" x2="850" y2="250" stroke="#C25B00" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="820" y="380" fill="#C25B00" font-size="11" font-style="italic">ref</text>
+  <circle cx="760" cy="490" r="4" fill="#C25B00"/>
+  <circle cx="850" cy="250" r="4" fill="#C25B00"/>
+
+  <!-- Drop shadow filter -->
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+</svg>
