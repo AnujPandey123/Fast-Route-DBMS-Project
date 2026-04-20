@@ -1,4 +1,4 @@
-# FastRoute Logistics — Database Systems Project
+# FastRoute Logistics - Database Systems Project
 ## Working Prototype Package | MBA – Operations & Management
 
 **Team: Anuj, Bharat, Bhavesh**
